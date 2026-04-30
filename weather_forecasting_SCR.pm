@@ -114,7 +114,7 @@ module TOWFM1
 label "rain" = (x=4 | x=9 | x=10 | x=11 | x=12 | x=13 | x=14);
 
 // Strong rain persistence (core rainy sequences)
-label "heavy_rain" = (x=10 | x=12);
+label "rain_h" = (x=10 | x=12);
 
 // Fully rainy sequence
 label "RRR" = (x=12);
