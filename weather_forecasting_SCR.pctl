@@ -52,52 +52,27 @@ P=? [ F [8,14] x=12 ]
 
 
 
-// // // // //
+P=? [ F x=12 ]
 
-// We formally verify the probability of observing extended rainfall patterns by analyzing the likelihood of persistent rain-dominant states over multiple consecutive time steps within a bounded horizon of 30 days. This property is expressed using PCTL, where the next operator (X) refers to the immediate successor state. The use of successive X operators enables the characterization of consecutive occurrences of rainfall, thereby capturing sustained precipitation events.
-P=? [ F<=30 ("heavy_rain" & X "heavy_rain" & X X "heavy_rain") ]
+P=? [ F x=9 ]
 
+P=? [ F<=168 x=25]
 
-// We verify the probability of occurrence of rainfall within a bounded time horizon using the eventually operator (F), which specifies that a given condition will hold at some point in the future. This allows us to quantify the likelihood of precipitation occurring within the next few days.
-P=? [ F<=7 "rain" ]
+P<0.45 [ F<=168 x=4 ]
 
+P>0.4 [ F[8,30] x=8 ]
 
-// We formally analyze the probability of transitioning from dry weather conditions to rainfall within a specified time interval using the until operator (U). This operator captures the notion that dry conditions persist continuously until rainfall occurs, thereby modeling the onset of precipitation following a dry spell.
-P=? [ "dry" U<=7 "rain" ]
+P=? [ F<=24 x=25]
 
+P=? [ F[8,30] x=16 ]
 
-// We verify the probability of maintaining rain-free conditions over a specified time horizon using the globally operator (G), which ensures that a given condition holds at all time steps within the bounded interval. This property captures prolonged dry periods that are relevant for agricultural and environmental planning.
-P=? [ G<=7 "dry" ]
+P=? [ F[25,168] x=25]
 
+P=? [ F[169,720] x=25]
 
-// We verify the likelihood of precipitation following sustained cloudy conditions by analyzing transitions from fully cloudy states to rain-dominant states within a short-term horizon. This captures a common meteorological progression from cloud accumulation to rainfall.
-P=? [ (x=8) => F<=3 "rain" ]
+P=? [ F[0,24] x=15 ]
 
-
-// We analyze the persistence of rainfall by verifying the probability of reaching and maintaining fully rainy states within a bounded time horizon, thereby providing insight into the duration and stability of precipitation events.
-P=? [ F<=5 "RRR" ]
-
-
-// We verify the probability of recovery from sustained rainfall to clear weather within a bounded time interval, capturing the transition from adverse to favorable weather conditions.
-P=? [ (x=12) => F<=5 "SSS" ]
-
-// We analyze the stability of clear weather conditions by verifying that sunny states persist throughout a specified time horizon, indicating periods of atmospheric stability.
-P=? [ G<=5 "SSS" ]
-
-// We evaluate the probability of oscillatory weather behavior characterized by frequent transitions between sunny and cloudy conditions, reflecting unstable atmospheric dynamics.
-P=? [ F<=10 (x=2 | x=6) ]
-
-
-
-
-
-
-
-
-
-
-
-
+P=? [ F[25,168] x=14 ]
 
 
 
