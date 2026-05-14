@@ -126,22 +126,9 @@ endmodule
 
 
 
-// Rain-dominant states (last day is rainy or strong rain persistence)
-label "rain" = (x=4 | x=9 | x=10 | x=11 | x=12 | x=13 | x=14);
-
 // Strong rain persistence (core rainy sequences)
-label "rain_h" = (x=10 | x=12);
+label "rain_h3" = (x=10 | x=12);
 
-label "rain3" = (c = 3);
-
-// Fully rainy sequence
-label "RRR" = (x=12);
-
-// Fully cloudy sequence
-label "CCC" = (x=8);
-
-// Fully sunny sequence
-label "SSS" = (x=0);
 
 // Dry weather (no rain)
 label "dry" = (x=0 | x=1 | x=2 | x=3 | x=5 | x=6 | x=7 | x=8);
