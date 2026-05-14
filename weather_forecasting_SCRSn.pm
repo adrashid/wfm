@@ -37,7 +37,7 @@ const double P21 = 879/10000;
 const double P22 = 1 - (P20 + P21);
 
 const double P23 = 5792/10000;
-const double P24 = 325/10000;
+const double P24 = 325/1000;
 const double P42 = 1 - (P23 + P24);
 
 const double P25 = 45/100;
@@ -49,7 +49,7 @@ const double P28 = 7143/10000;
 const double P29 = 1 - (P27 + P28);
 
 
-const double P30 = 5410/10000;
+const double P30 = 541/1000;
 const double P31 = 25/100;
 const double P48 = 1 - (P30 + P31);
 
@@ -65,7 +65,7 @@ const double P37 = 7971/10000;
 const double P38 = 145/10000;
 const double P39 = 1 - (P37 + P38);
 
-const double P40 = 456/10000;
+const double P40 = 456/1000;
 const double P41 = 1 - P40;
 
 const double P45 = 576/1000;
@@ -78,13 +78,13 @@ const double P52 = 455/1000;
 const double P53 = 1 - P52;
 
 const double P54 = 35/100;
-const double P55 = 40/100;
+const double P55 = 4/10;
 const double P56 = 1 - (P54 + P55);
 
 const double P57 = 325/1000;
 const double P58 = 1 - P57;
 
-const double P59 = 40/100;
+const double P59 = 4/10;
 const double P60 = 345/1000;
 const double P61 = 1 - (P59 + P60);
 
@@ -96,7 +96,7 @@ const double P68 = 568/1000;
 const double P65 = 1 - P68;
 
 const double P66 = 365/1000;
-const double P67 = 20/100;
+const double P67 = 2/10;
 const double P49 = 1 - (P66 + P67);
 
 
