@@ -1,55 +1,59 @@
-// First-Order DTMC Weather Forecasting Model
-// States: Sunny (S), Cloudy (C), Rainy (R), Snowy (Sn)
+// ======================================================
+// First-Order DTMC (SCRSn)
+// ======================================================
 
 dtmc
 
-// Sunny transitions
-const double Pss = 44/100;
-const double Psc = 56/100;
+// ==============================
+// Transition Probabilities
+// ==============================
 
-// Cloudy transitions
-const double Pcs = 73/100;
-const double Pcr = 156/1000;
-const double Pcc = 1 - (Pcs + Pcr);
+// Sunny
+const double Pss  = 23/50;
+const double Psc  = 27/50;
 
-// Rainy transitions
-const double Prc  = 295/1000;
-const double Prsn = 273/1000;
-const double Prr  = 1 - (Prc + Prsn);
+// Cloudy
+const double Pcs  = 11/25;
+const double Pcc  = 17/50;
+const double Pcr  = 9/50;
+const double Pcsn = 3/50;
 
-// Snowy transitions
-const double Psnsn = 50/100;
-const double Psnr  = 50/100;
+// Rainy
+const double Prs  = 7/50;
+const double Prc  = 29/100;
+const double Prr  = 21/50;
+const double Prsn = 9/100;
 
-module WFM2
+// Snowy
+const double Psn_s  = 13/200;
+const double Psn_c  = 21/100;
+const double Psn_r  = 31/100;
+const double Psn_sn = 33/100;
 
-    // 0 = Sunny
-    // 1 = Cloudy
-    // 2 = Rainy
-    // 3 = Snowy
+
+// ==============================
+// DTMC MODULE
+// ==============================
+
+module WFM1
 
     x : [0..3] init 0;
 
-    // Sunny
+    // 0 = S
+    // 1 = C
+    // 2 = R
+    // 3 = Sn
+
     [] x = 0 ->
-          Pss:(x' = 0)
-        + Psc:(x' = 1);
+        Pss:(x'=0) + Psc:(x'=1);
 
-    // Cloudy
     [] x = 1 ->
-          Pcs:(x' = 0)
-        + Pcc:(x' = 1)
-        + Pcr:(x' = 2);
+        Pcs:(x'=0) + Pcc:(x'=1) + Pcr:(x'=2) + Pcsn:(x'=3);
 
-    // Rainy
     [] x = 2 ->
-          Prc:(x' = 1)
-        + Prr:(x' = 2)
-        + Prsn:(x' = 3);
+        Prs:(x'=0) + Prc:(x'=1) + Prr:(x'=2) + Prsn:(x'=3);
 
-    // Snowy
     [] x = 3 ->
-          Psnsn:(x' = 3)
-        + Psnr:(x' = 2);
+        Psn_s:(x'=0) + Psn_c:(x'=1) + Psn_r:(x'=2) + Psn_sn:(x'=3);
 
 endmodule
