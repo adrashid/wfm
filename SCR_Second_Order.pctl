@@ -1,0 +1,54 @@
+// What is the probability of occurence of the (C,R) state, i.e., the probability of a cloudy weather turning into rainy weather in future?
+P=? [ F x=3 ]
+
+// What is the probability of occurence of the (S,S) state, i.e., sunny state if yesterday was sunny, in future?
+P=? [ F x=0 ]
+
+// What is the probability of occurence of the (S,C) state, i.e., the probability of a sunny weather turning into cloudy weather in future?
+P=? [ F x=1 ]
+
+// What is the probability of occurence of the (C,C) state, i.e., cloudy state if  yesterday was cloudy, in future?
+P=? [ F x=2 ]
+
+// What is the probability of occurence of the (R,R) state, i.e., rainy state if  yesterday was rainy, in future?
+P=? [ F x=4 ]
+
+// What is the probability of occurence of the (R,C) state, i.e., the probability of a rainy weather turning into cloudy weather in future?
+P=? [ F x=5 ]
+
+// What is the probability of occurence of the (C,S) state, i.e., the probability of a cloudy weather turning into sunny weather in future?
+P=? [ F x=6 ]
+
+// Probability of (S,S) weather state at the first day is equal to 1.
+P>=1 [ F<=1 x=0 ]
+
+// What is the probability of (C,C) weather state within the first five days?
+P=? [ F<=5 x=2 ]
+
+// The probability of occurrence of the state (C,R) within 7 days, given the initial state, is always less than 0.15.
+P < 0.15 [ F<=7 x=4 ]
+
+// What is the probability of (S,S) weather state initially?
+P=? [ F<1 x=0 ]
+
+// What is the probability of occurrence of (S,S) weather state within four days?
+P=? [ F<=4 x=0 ]
+
+// What is the probability of occurrence of (S,S) weather state within seven days?
+P=? [ F<=7 x=0 ]
+
+// What is the probability of (S,C) weather within seven days?
+P=? [ F<=7 x=1 ]
+
+// What is the probability of (S,C) weather state with an initial state as (S,S)?
+P=? [ F<1 x=1 ]
+
+// What is the probability of (R,C) weather within seven days?
+P=? [ F<=7 x=5 ]
+
+// Probability of occurrence of the cloudy state on two consecutive days, i.e., (C,C) during the seond week is greater than 0.53
+P>0.53 [ F [8,14] x=2 ]
+
+// What is the probability of occurrence of the rainy state on two consecutive days, i.e., (R,R) during the second week?
+P=? [ F [8,14] x=4 ]
+
