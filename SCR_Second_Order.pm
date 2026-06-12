@@ -1,54 +1,76 @@
 
 
-// PRISM Model (DTMC) for the S-C-R weather forecating model
+
+// Second-Order DTMC for SCR Weather Model
+
 
 dtmc
 
-// Transition probabilities
+// --------------------
+// Transition Probabilities
+// --------------------
 
-const double Psc = 34/100;
-const double Psc1 = 1 - Psc;
+// (S,S)
+const double P1 = 337/500;   // (S,S) -> (S,S)
+const double P2 = 163/500;   // (S,S) -> (S,C)
 
-const double Pcc = 41/100;
-const double Pcc1 = 1 - Pcc;
+// (S,C)
+const double P3 = 421/1000;  // (S,C) -> (C,S)
+const double P4 = 402/1000;  // (S,C) -> (C,C)
+const double P5 = 177/1000;  // (S,C) -> (C,R)
 
-const double Pss = 66/100;
-const double Pss1 = 1 - Pss;
+// (C,S)
+const double P6 = 66/100;    // (C,S) -> (S,S)
+const double P7 = 34/100;    // (C,S) -> (S,C)
 
-const double Pcr = 92/1000;
-const double Pcs = 54/100;
-const double Pcr1 = 1 - (Pcr + Pcs);
+// (C,C)
+const double P8 = 39/100;    // (C,C) -> (C,S)
+const double P9 = 40/100;    // (C,C) -> (C,C)
+const double P10 = 21/100;   // (C,C) -> (C,R)
 
-const double Prr = 70/100;
-const double Prr1 = 1 - Prr;
+// (C,R)
+const double P11 = 31/100;   // (C,R) -> (R,R)
+const double P12 = 69/100;   // (C,R) -> (R,C)
 
-const double Prc = 30/100;
-const double Prc1 = 1 - Prc;
+// (R,R)
+const double P13 = 56/100;   // (R,R) -> (R,R)
+const double P14 = 44/100;   // (R,R) -> (R,C)
 
-const double Pcrr = 20/100;
-const double Pcrr1 = 1 - Pcrr;
+// (R,C)
+const double P15 = 32/100;   // (R,C) -> (C,C)
+const double P16 = 18/100;   // (R,C) -> (C,S)
+const double P17 = 50/100;   // (R,C) -> (C,R)
 
 
-module WFM1
+// --------------------
+// DTMC Module
+// --------------------
+
+module WFM2
+
+    // State encoding:
+    // 0 = (S,S)
+    // 1 = (S,C)
+    // 2 = (C,S)
+    // 3 = (C,C)
+    // 4 = (C,R)
+    // 5 = (R,R)
+    // 6 = (R,C)
 
     x : [0..6] init 0;
-	
-// S <-> Sunny, C <-> Cloudy, R <-> Rainy
 
-// x = 0 <-> (S,S), 
-// x = 1 <-> (S,C), 
-// x = 2 <-> (C,C), 
-// x = 3 <-> (C,R), 
-// x = 4 <-> (R,R), 
-// x = 5 <-> (R,C), 
-// x = 6 <-> (C,S)
-    
-    [] x = 0 -> Psc1:(x' = 0) + Psc:(x' = 1);
-    [] x = 1 -> Pcc:(x' = 2) + Pcc1:(x' = 6);    
-    [] x = 2 -> Pcr1:(x' = 2) + Pcr:(x' = 3) + Pcs:(x' = 6);
-    [] x = 3 -> Prr1:(x' = 5) + Prr:(x' = 4);
-    [] x = 4 -> Prc1:(x' = 4) + Prc:(x' = 5);
-    [] x = 5 -> Pcrr:(x' = 3) + Pcrr1:(x' = 2);
-    [] x = 6 -> Pss:(x' = 0) + Pss1:(x' = 1);
+    [] x = 0 -> P1:(x'=0) + P2:(x'=1);
+
+    [] x = 1 -> P3:(x'=2) + P4:(x'=3) + P5:(x'=4);
+
+    [] x = 2 -> P6:(x'=0) + P7:(x'=1);
+
+    [] x = 3 -> P8:(x'=2) + P9:(x'=3) + P10:(x'=4);
+
+    [] x = 4 -> P11:(x'=5) + P12:(x'=6);
+
+    [] x = 5 -> P13:(x'=5) + P14:(x'=6);
+
+    [] x = 6 -> P15:(x'=3) + P16:(x'=2) + P17:(x'=4);
 
 endmodule
