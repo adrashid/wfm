@@ -1,19 +1,33 @@
-// First-Order DTMC Weather Forecasting Model
-// States: Sunny (S), Cloudy (C), Rainy (R)
+
+
+// ======================================================
+// First-Order DTMC for SCR Weather Model
+// ======================================================
 
 dtmc
 
-// Transition probabilities
+// --------------------
+// Transition Probabilities
+// --------------------
 
-const double Pss = 66/100;
-const double Psc = 34/100;
+// Sunny
+const double P1 = 67/100;   // S -> S
+const double P2 = 33/100;   // S -> C
 
-const double Pcs = 54/100;
-const double Pcr = 92/1000;
-const double Pcc = 1 - (Pcs + Pcr);
+// Cloudy
+const double P3 = 45/100;   // C -> S
+const double P4 = 37/100;   // C -> C
+const double P5 = 18/100;   // C -> R
 
-const double Prr = 70/100;
-const double Prc = 30/100;
+// Rainy
+const double P6 = 12/100;   // R -> S
+const double P7 = 32/100;   // R -> C
+const double P8 = 56/100;   // R -> R
+
+
+// --------------------
+// DTMC Module
+// --------------------
 
 module WFM1
 
@@ -23,20 +37,10 @@ module WFM1
 
     x : [0..2] init 0;
 
-    // Sunny
-    [] x = 0 ->
-          Pss:(x' = 0)
-        + Psc:(x' = 1);
+    [] x = 0 -> P1:(x'=0) + P2:(x'=1);
 
-    // Cloudy
-    [] x = 1 ->
-          Pcs:(x' = 0)
-        + Pcc:(x' = 1)
-        + Pcr:(x' = 2);
+    [] x = 1 -> P3:(x'=0) + P4:(x'=1) + P5:(x'=2);
 
-    // Rainy
-    [] x = 2 ->
-          Prc:(x' = 1)
-        + Prr:(x' = 2);
+    [] x = 2 -> P6:(x'=0) + P7:(x'=1) + P8:(x'=2);
 
 endmodule
