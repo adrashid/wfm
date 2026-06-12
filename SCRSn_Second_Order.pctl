@@ -1,0 +1,48 @@
+// What is the probability of occurence of the (S,S) state, i.e., sunny state if yesterday was sunny, in future?
+P=? [ F x=0 ]
+
+// What is the probability of occurence of the (S,C) state, i.e., the probability of a sunny weather turning into cloudy weather in future?
+P=? [ F x=1 ]
+
+// What is the probability of occurence of the (C,S) state, i.e., the probability of a cloudy weather turning into cloudy weather in future?
+P=? [ F x=3 ]
+
+// What is the probability of occurence of the (R,R) state, i.e., rainy state if yesterday was rainy, in future?
+P=? [ F x=5 ]
+
+// What is the probability of occurence of the (R,C) state, i.e., the probability of a rainy weather turning into cloudy weather in future?
+P=? [ F x=6 ]
+
+// What is the probability of occurence of the (C,R) state, i.e., the probability of a cloudy weather turning into rainy weather in future?
+P=? [ F x=4 ]
+
+// What is the probability of occurence of the (Sn,Sn) state, i.e., snowy state if yesterday was snowy, in future?
+P=? [ F x=8 ]
+
+// What is the probability of occurence of the (Sn,R) state, i.e., the probability of a snowy weather turning into rainy weather in future?
+P=? [ F x=9 ]
+
+// What is the probability of (R,R) weather state within seven days?
+P=? [ F<=7 x=5 ]
+
+// What is the probability of (S,S) weather state initially?
+P=? [ F<1 x=0 ]
+
+// What is the probability of occurrence of (S,S) weather state within three days?
+P=? [ F<=3 x=0 ]
+
+// What is the probability of occurrence of (S,S) weather state within seven days?
+P=? [ F<=7 x=0 ]
+
+// What is the probability of (S,C) weather within seven days?
+P=? [ F<=7 x=1 ]
+
+// What is the probability of (C,S) weather state with an initial state as (S,S)?
+P=? [ F<1 x=3 ]
+
+// What is the probability of (R,C) weather within five days?
+P=? [ F<=5 x=5 ]
+
+// What is the probability of occurrence of the snowy state on two consecutive days, i.e., (Sn,Sn) during the second week?
+P=? [ F [8,14] x=8 ]
+
