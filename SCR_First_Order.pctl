@@ -1,0 +1,30 @@
+// What is the probability of occurrence of the Sunny state in the future?
+P=? [ F x=0 ]
+
+// What is the probability of occurrence of the Cloudy state in the future?
+P=? [ F x=1 ]
+
+// What is the probability of occurrence of the Rainy state in the future?
+P=? [ F x=2 ]
+
+
+// What is the probability of reaching the Rainy state within seven days?
+P=? [ F<=7 x=2 ]
+
+// What is the probability of the Sunny state initially?
+P=? [ F<1 x=0 ]
+
+// What is the probability of occurrence of the Sunny state within three days?
+P=? [ F<=3 x=0 ]
+
+// What is the probability of occurrence of the Sunny state within seven days?
+P=? [ F<=7 x=0 ]
+
+// What is the probability of occurrence of the Cloudy state within seven days?
+P=? [ F<=7 x=1 ]
+
+// What is the probability of occurrence of the Rainy state within five days?
+P=? [ F<=5 x=2 ]
+
+// What is the probability of occurrence of the Rainy state during the second week?
+P=? [ F[8,14] x=2 ]
