@@ -11,8 +11,8 @@ dtmc
 // --------------------
 
 // (S,S)
-const double P1 = 337/500;   // (S,S) -> (S,S)
-const double P2 = 163/500;   // (S,S) -> (S,C)
+const double P1 = 674/1000;   // (S,S) -> (S,S)
+const double P2 = 326/1000;   // (S,S) -> (S,C)
 
 // (S,C)
 const double P3 = 421/1000;  // (S,C) -> (C,S)
