@@ -20,9 +20,8 @@ const double P4 = 37/100;   // C -> C
 const double P5 = 18/100;   // C -> R
 
 // Rainy
-const double P6 = 12/100;   // R -> S
-const double P7 = 32/100;   // R -> C
-const double P8 = 56/100;   // R -> R
+const double P6 = 44/100;   // R -> C
+const double P7 = 56/100;   // R -> R
 
 
 // --------------------
@@ -41,6 +40,6 @@ module WFM1
 
     [] x = 1 -> P3:(x'=0) + P4:(x'=1) + P5:(x'=2);
 
-    [] x = 2 -> P6:(x'=0) + P7:(x'=1) + P8:(x'=2);
+    [] x = 2 -> P6:(x'=1) + P7:(x'=2);
 
 endmodule
