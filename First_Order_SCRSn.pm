@@ -9,8 +9,8 @@ dtmc
 // ==============================
 
 // Sunny
-const double Pss  = 23/50;
-const double Psc  = 27/50;
+const double Pss  = 46/100;
+const double Psc  = 54/100;
 
 // Cloudy
 const double Pcs  = 44/100;
@@ -23,9 +23,8 @@ const double Prr  = 58/100;
 const double Prsn = 11/100;
 
 // Snowy
-const double Psn_c  = 21/100;
-const double Psn_r  = 31/100;
-const double Psn_sn = 33/100;
+const double Psn_r  = 48/100;
+const double Psn_sn = 52/100;
 
 
 // ==============================
@@ -43,10 +42,10 @@ module WFMSCRSNO1
 
     [] x = 0 -> Pss:(x'=0) + Psc:(x'=1);
 
-    [] x = 1 -> Pcs:(x'=0) + Pcc:(x'=1) + Pcr:(x'=2) + Pcsn:(x'=3);
+    [] x = 1 -> Pcs:(x'=0) + Pcc:(x'=1) + Pcr:(x'=2);
 
-    [] x = 2 -> Prs:(x'=0) + Prc:(x'=1) + Prr:(x'=2) + Prsn:(x'=3);
+    [] x = 2 -> Prc:(x'=1) + Prr:(x'=2) + Prsn:(x'=3);
 
-    [] x = 3 -> Psn_s:(x'=0) + Psn_c:(x'=1) + Psn_r:(x'=2) + Psn_sn:(x'=3);
+    [] x = 3 -> Psn_r:(x'=2) + Psn_sn:(x'=3);
 
 endmodule
