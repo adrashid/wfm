@@ -100,7 +100,7 @@ const double P67 = 2/10;
 const double P49 = 1 - (P66 + P67);
 
 
-module TOWFM2
+module WFMSCRSNO3
 
     x : [0..25] init 0;
 
