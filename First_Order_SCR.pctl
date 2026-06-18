@@ -8,23 +8,23 @@ P=? [ F x=1 ]
 P=? [ F x=2 ]
 
 
-// What is the probability of reaching the Rainy state within seven days?
+// What is the probability of reaching the Rainy state within seven hours?
 P=? [ F<=7 x=2 ]
 
 // What is the probability of the Sunny state initially?
 P=? [ F<1 x=0 ]
 
-// What is the probability of occurrence of the Sunny state within three days?
+// What is the probability of occurrence of the Sunny state within three hours?
 P=? [ F<=3 x=0 ]
 
-// What is the probability of occurrence of the Sunny state within seven days?
+// What is the probability of occurrence of the Sunny state within seven hours?
 P=? [ F<=7 x=0 ]
 
-// What is the probability of occurrence of the Cloudy state within seven days?
+// What is the probability of occurrence of the Cloudy state within seven hours?
 P=? [ F<=7 x=1 ]
 
-// What is the probability of occurrence of the Rainy state within five days?
+// What is the probability of occurrence of the Rainy state within five hours?
 P=? [ F<=5 x=2 ]
 
-// What is the probability of occurrence of the Rainy state during the second week?
+// What is the probability of occurrence of the Rainy state during the 8th and 14th hour?
 P=? [ F[8,14] x=2 ]
