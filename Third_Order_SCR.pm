@@ -66,7 +66,7 @@ const double P40 = 75/100;
 const double P41 = 1 - P40;
 
 
-module TOWFM1
+module WFMSCRO3
 
     x : [0..16] init 0;
 
