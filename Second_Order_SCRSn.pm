@@ -32,7 +32,8 @@ const double Prrsn = 11/100;
 
 // (R,R)
 const double Prc = 60/100;
-const double Prrr = 40/100;
+const double Prrr = 30/100;
+const double Prrsn = 10/100;
 
 // (R,C)
 const double Pcrc = 73/100;
@@ -47,8 +48,9 @@ const double Psnsnsn = 61/100;
 const double Psnsnr = 39/100;
 
 // (Sn,R)
-const double Psnrr = 54/100;
-const double Psnrsn = 46/100;
+const double Psnrr = 44/100;
+const double Psnrsn = 36/100;
+const double Psnrc = 20/100;
 
 
 // ==============================
@@ -81,7 +83,7 @@ module WFMSCRSNO2
 
     [] x = 4 -> Prr:(x'=5) + Prrc:(x'=6) + Prrsn:(x'=7);
 
-    [] x = 5 -> Prc:(x'=6) + Prrr:(x'=5);
+    [] x = 5 -> Prc:(x'=6) + Prrr:(x'=5) + Prrsn:(x'=7);
 
     [] x = 6 -> Pcrc:(x'=2) + Pcrr:(x'=4);
 
@@ -89,6 +91,6 @@ module WFMSCRSNO2
 
     [] x = 8 -> Psnsnsn:(x'=8) + Psnsnr:(x'=9);
 
-    [] x = 9 -> Psnrr:(x'=5) + Psnrsn:(x'=7);
+    [] x = 9 -> Psnrr:(x'=5) + Psnrc:(x'=6) + Psnrsn:(x'=7);
 
 endmodule
