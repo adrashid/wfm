@@ -46,7 +46,7 @@ const double P17 = 50/100;   // (R,C) -> (C,R)
 // DTMC Module
 // --------------------
 
-module WFM2
+module WFMSCRO2
 
     // State encoding:
     // 0 = (S,S)
