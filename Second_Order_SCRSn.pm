@@ -55,7 +55,7 @@ const double Psnrsn = 46/100;
 // DTMC Module
 // ==============================
 
-module WFM2
+module WFMSCRSNO2
 
     x : [0..9] init 0;
 
