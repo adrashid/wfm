@@ -28,7 +28,7 @@ const double P7 = 56/100;   // R -> R
 // DTMC Module
 // --------------------
 
-module WFM1
+module WFMSCRO1
 
     // 0 = Sunny
     // 1 = Cloudy
