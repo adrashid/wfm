@@ -1,4 +1,4 @@
-// What is the probability of occurence of the (S,S) state, i.e., sunny state if yesterday was sunny, in future?
+// What is the probability of occurence of the (S,S) state, i.e., sunny state if the last hour was sunny, in future?
 P=? [ F x=0 ]
 
 // What is the probability of occurence of the (S,C) state, i.e., the probability of a sunny weather turning into cloudy weather in future?
@@ -7,7 +7,7 @@ P=? [ F x=1 ]
 // What is the probability of occurence of the (C,S) state, i.e., the probability of a cloudy weather turning into cloudy weather in future?
 P=? [ F x=3 ]
 
-// What is the probability of occurence of the (R,R) state, i.e., rainy state if yesterday was rainy, in future?
+// What is the probability of occurence of the (R,R) state, i.e., rainy state if the last hour was rainy, in future?
 P=? [ F x=5 ]
 
 // What is the probability of occurence of the (R,C) state, i.e., the probability of a rainy weather turning into cloudy weather in future?
@@ -16,7 +16,7 @@ P=? [ F x=6 ]
 // What is the probability of occurence of the (C,R) state, i.e., the probability of a cloudy weather turning into rainy weather in future?
 P=? [ F x=4 ]
 
-// What is the probability of occurence of the (Sn,Sn) state, i.e., snowy state if yesterday was snowy, in future?
+// What is the probability of occurence of the (Sn,Sn) state, i.e., snowy state if the last hour was snowy, in future?
 P=? [ F x=8 ]
 
 // What is the probability of occurence of the (Sn,R) state, i.e., the probability of a snowy weather turning into rainy weather in future?
